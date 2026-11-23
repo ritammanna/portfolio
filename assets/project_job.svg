@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="portalBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#051224"/>
+      <stop offset="50%" stop-color="#092042"/>
+      <stop offset="100%" stop-color="#030b18"/>
+    </linearGradient>
+    <linearGradient id="navPill" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#portalBg)"/>
+
+  <!-- Left Sidebar Panel -->
+  <g transform="translate(45, 40)">
+    <rect width="200" height="420" rx="16" fill="rgba(15, 30, 60, 0.85)" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5"/>
+    <circle cx="35" cy="35" r="14" fill="#38bdf8"/>
+    <text x="60" y="41" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16">JobHub</text>
+
+    <!-- Navigation items -->
+    <rect x="18" y="78" width="164" height="38" rx="10" fill="url(#navPill)"/>
+    <text x="55" y="102" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13">Explore Jobs</text>
+    <text x="55" y="148" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="13">Applications</text>
+    <text x="55" y="188" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="13">Recruiter Portal</text>
+    <text x="55" y="228" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="13">Saved Roles</text>
+    <text x="55" y="268" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="13">Settings</text>
+  </g>
+
+  <!-- Main Feed: Jobs Listings & Filters -->
+  <g transform="translate(275, 40)">
+    <!-- Search Bar -->
+    <rect width="480" height="55" rx="14" fill="rgba(15, 30, 60, 0.85)" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5"/>
+    <text x="25" y="33" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="14">Search: Software Engineer, MERN, React, AI...</text>
+    <rect x="375" y="10" width="90" height="35" rx="8" fill="#0284c7"/>
+    <text x="402" y="32" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13">Filter</text>
+
+    <!-- Job Card 1 -->
+    <g transform="translate(0, 80)">
+      <rect width="480" height="105" rx="14" fill="rgba(15, 30, 60, 0.85)" stroke="rgba(56, 189, 248, 0.45)" stroke-width="1.5"/>
+      <rect x="20" y="20" width="48" height="48" rx="10" fill="rgba(56, 189, 248, 0.15)"/>
+      <text x="32" y="52" fill="#38bdf8" font-size="24">💼</text>
+      <text x="82" y="40" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15">Full-Stack Software Engineer (MERN)</text>
+      <text x="82" y="60" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="12">TechCorp • Bengaluru (Hybrid) • &#8377;12-18 LPA</text>
+      
+      <rect x="82" y="72" width="75" height="20" rx="6" fill="rgba(34, 197, 94, 0.15)"/>
+      <text x="95" y="86" fill="#4ade80" font-family="'JetBrains Mono', monospace" font-size="10">FULL-TIME</text>
+
+      <rect x="375" y="35" width="85" height="35" rx="8" fill="#22c55e"/>
+      <text x="398" y="57" fill="#000000" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="13">APPLY</text>
+    </g>
+
+    <!-- Job Card 2 -->
+    <g transform="translate(0, 205)">
+      <rect width="480" height="105" rx="14" fill="rgba(15, 30, 60, 0.85)" stroke="rgba(147, 51, 234, 0.35)" stroke-width="1.5"/>
+      <rect x="20" y="20" width="48" height="48" rx="10" fill="rgba(147, 51, 234, 0.15)"/>
+      <text x="32" y="52" fill="#c084fc" font-size="24">🤖</text>
+      <text x="82" y="40" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15">Generative AI &amp; RAG Engineer</text>
+      <text x="82" y="60" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="12">CloudScale Solutions • Remote • &#8377;16-24 LPA</text>
+
+      <rect x="82" y="72" width="65" height="20" rx="6" fill="rgba(147, 51, 234, 0.15)"/>
+      <text x="95" y="86" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="10">REMOTE</text>
+
+      <rect x="375" y="35" width="85" height="35" rx="8" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+      <text x="398" y="57" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13">APPLY</text>
+    </g>
+
+    <!-- Job Card 3 -->
+    <g transform="translate(0, 330)">
+      <rect width="480" height="90" rx="14" fill="rgba(15, 30, 60, 0.85)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5"/>
+      <rect x="20" y="15" width="48" height="48" rx="10" fill="rgba(245, 158, 11, 0.15)"/>
+      <text x="32" y="47" fill="#fbbf24" font-size="24">⚛️</text>
+      <text x="82" y="38" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15">Frontend React Engineer</text>
+      <text x="82" y="58" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="12">FinTech Systems • Kolkata / Hybrid</text>
+    </g>
+  </g>
+</svg>

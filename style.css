@@ -859,6 +859,53 @@ body {
   color: var(--text-dim);
 }
 
+.mockup-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: #080d1a;
+}
+
+.mockup-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+  filter: brightness(0.92) contrast(1.05);
+}
+
+.preview-mockup:hover .mockup-img {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+
+.preview-overlay-tag {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(5, 8, 17, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: var(--cyan-accent);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s ease;
+}
+
+.preview-mockup:hover .preview-overlay-tag {
+  background: var(--cyan-accent);
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
+}
+
 .mockup-body {
   height: 230px;
   display: flex;

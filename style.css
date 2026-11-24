@@ -51,18 +51,20 @@ body {
   pointer-events: none;
 }
 
-/* Mouse Glow Reflection */
+/* ==========================================================
+   SUBTLE PROFESSIONAL MOUSE TRACKER
+   ========================================================== */
 .mouse-glow {
   position: fixed;
   top: 0;
   left: 0;
-  width: 500px;
-  height: 500px;
+  width: 480px;
+  height: 480px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 210, 255, 0.08) 0%, rgba(139, 92, 246, 0.04) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.08) 0%, rgba(139, 92, 246, 0.03) 45%, transparent 70%);
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 0;
+  z-index: 9997;
   transition: opacity 0.3s ease;
 }
 
@@ -70,15 +72,37 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background-color: var(--cyan-accent);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 9999;
-  box-shadow: 0 0 12px var(--cyan-accent);
+  z-index: 10000;
+  box-shadow: 0 0 10px var(--cyan-accent);
   transition: transform 0.1s ease;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(56, 189, 248, 0.45);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.cursor-ring.hover-active {
+  width: 52px;
+  height: 52px;
+  border-color: var(--cyan-accent);
+  background-color: rgba(0, 210, 255, 0.08);
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
 }
 
 /* Ambient Glow Orbs */
@@ -462,6 +486,7 @@ body {
   color: var(--text-main);
   font-size: 1.2rem;
   text-decoration: none;
+  cursor: pointer;
   transition: all 0.25s ease;
 }
 
@@ -873,7 +898,7 @@ body {
   object-fit: cover;
   object-position: top center;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
-  filter: brightness(0.92) contrast(1.05);
+  filter: brightness(0.95) contrast(1.05);
 }
 
 .preview-mockup:hover .mockup-img {
@@ -904,122 +929,6 @@ body {
   background: var(--cyan-accent);
   color: #000;
   box-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
-}
-
-.mockup-body {
-  height: 230px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.ai-preview-body {
-  background: radial-gradient(circle at center, #0a1936 0%, #050914 100%);
-}
-
-.recipe-preview-body {
-  background: radial-gradient(circle at center, #1e1333 0%, #080612 100%);
-}
-
-.job-preview-body {
-  background: radial-gradient(circle at center, #0c2333 0%, #050e17 100%);
-}
-
-.preview-3d-visual {
-  position: relative;
-  width: 90px;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-
-.pulsing-core {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--cyan-accent);
-  box-shadow: 0 0 25px var(--cyan-accent);
-  animation: pulseCore 2s infinite ease-in-out;
-}
-
-.orbit-ring {
-  position: absolute;
-  border: 1px dashed rgba(0, 210, 255, 0.5);
-  border-radius: 50%;
-}
-
-.ring-1 {
-  width: 65px;
-  height: 65px;
-  animation: spinRing 6s linear infinite;
-}
-
-.ring-2 {
-  width: 90px;
-  height: 90px;
-  border-color: rgba(144, 85, 255, 0.4);
-  animation: spinRing 10s linear infinite reverse;
-}
-
-@keyframes pulseCore {
-  0%, 100% { transform: scale(1); filter: brightness(1); }
-  50% { transform: scale(1.15); filter: brightness(1.4); }
-}
-
-@keyframes spinRing {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.preview-tag {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-main);
-  background: rgba(0, 0, 0, 0.6);
-  padding: 6px 14px;
-  border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.recipe-card-mock, .job-card-mock {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 14px 20px;
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.recipe-img-mock, .job-icon-mock {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: rgba(56, 189, 248, 0.15);
-  color: var(--cyan-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-}
-
-.recipe-title-mock, .job-title-mock {
-  font-weight: 700;
-  font-size: 0.95rem;
-}
-
-.recipe-badge-mock, .job-comp-mock {
-  font-size: 0.78rem;
-  color: var(--text-muted);
 }
 
 /* Timeline (Education & Milestones) */
@@ -1252,14 +1161,20 @@ body {
   gap: 24px;
 }
 
-.footer-links a {
+.footer-links a, .footer-btn-link {
   color: var(--text-muted);
   text-decoration: none;
   font-size: 0.9rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   transition: color 0.2s ease;
 }
 
-.footer-links a:hover {
+.footer-links a:hover, .footer-btn-link:hover {
   color: var(--cyan-accent);
 }
 
@@ -1356,6 +1271,7 @@ body {
   font-size: 0.9rem;
   color: var(--text-muted);
   margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 .cv-download-success {

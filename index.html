@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ritam Manna | Full-Stack MERN & AI Engineer</title>
-  <meta name="description" content="Portfolio of Ritam Manna - Full-Stack MERN Developer & AI Engineer specializing in Generative AI, RAG Pipelines, and Interactive 3D Web Apps.">
+  <title>Ritam Manna | AI Engineer & Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Ritam Manna - AI Engineer & Full-Stack MERN Developer specializing in Generative AI, RAG Pipelines, and Interactive 3D Web Apps.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
   <!-- 3D Canvas Background -->
   <div id="canvas-container"></div>
   
-  <!-- Subtle Professional Precision Cursor -->
+  <!-- Subtle Refined Professional Cursor Tracker -->
   <div class="mouse-glow" id="mouseGlow"></div>
   <div class="cursor-ring" id="cursorRing"></div>
   <div class="cursor-dot" id="cursorDot"></div>
@@ -52,7 +52,7 @@
       <div class="hero-content">
         <div class="badge-pill">
           <span class="status-indicator"></span>
-          <span>Available for Full-Time Roles • 2026 Batch</span>
+          <span>Available for MNC & High-Growth Roles • 2026 Batch</span>
         </div>
         <h1 class="hero-title">
           Hi, I'm <span class="gradient-text">Ritam Manna</span>
@@ -68,11 +68,13 @@
           <a href="#projects" class="btn btn-primary">
             <i class="fa-solid fa-rocket"></i> Explore Work
           </a>
-          <button class="btn btn-glass" onclick="openCvRequestModal()">
+          <!-- Security Protected CV Request -->
+          <button class="btn btn-glass" onclick="openGateModal('cv', 'General CV Request')">
             <i class="fa-solid fa-file-shield"></i> Request CV
           </button>
-          <button class="btn btn-outline" onclick="openGithubRequestModal('Profile')">
-            <i class="fa-brands fa-github"></i> GitHub (Request Access)
+          <!-- Security Protected GitHub Access Gate -->
+          <button class="social-icon" onclick="openGateModal('github', 'https://github.com/ritammanna', 'Main GitHub Profile')" title="GitHub Access (Protected)">
+            <i class="fa-brands fa-github"></i>
           </button>
           <a href="https://www.linkedin.com/in/ritam-manna-0491112b1" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn Profile">
             <i class="fa-brands fa-linkedin-in"></i>
@@ -82,11 +84,11 @@
         <div class="hero-stats">
           <div class="stat-card">
             <span class="stat-num">3+</span>
-            <span class="stat-label">Production Web & AI Systems</span>
+            <span class="stat-label">Full-Stack & AI Systems</span>
           </div>
           <div class="stat-card">
             <span class="stat-num">&lt;2ms</span>
-            <span class="stat-label">BM25 Retrieval Latency</span>
+            <span class="stat-label">Vector Retrieval Latency</span>
           </div>
           <div class="stat-card">
             <span class="stat-num">100%</span>
@@ -110,7 +112,7 @@
             <i class="fa-solid fa-shield-halved"></i>
             <div>
               <div class="badge-title">AI & Full-Stack Developer</div>
-              <div class="badge-sub">MERN • Generative AI • Three.js</div>
+              <div class="badge-sub">MERN • FastAPI • Three.js</div>
             </div>
           </div>
           <div class="floating-tech tech-1"><i class="fa-brands fa-react"></i> React</div>
@@ -135,7 +137,7 @@
           <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
           <h3>Career Objective</h3>
           <p>
-            Aspiring Software & AI Engineer with strong expertise in Full-Stack Web Development (MERN) and Generative AI (LLMs, RAG Pipelines). Experienced in building responsive interfaces, RESTful APIs, vector retrieval engines, and 3D visual workflows. Seeking an entry-level role to develop scalable, intelligent, and user-centric software systems.
+            Aspiring Software & AI Engineer with foundational expertise in full-stack web development (MERN) and Generative AI (LLMs, RAG Pipelines). Experienced in designing responsive interfaces, implementing RESTful APIs, and managing workflows with Git and GitHub. Seeking an entry-level software engineer role to develop scalable, secure, and user-centric web applications.
           </p>
         </div>
 
@@ -251,7 +253,7 @@
       <div class="section-header">
         <span class="section-tag"><i class="fa-solid fa-laptop-code"></i> Production Work</span>
         <h2 class="section-title">Featured Projects with <span class="gradient-text">Live Demos</span></h2>
-        <p class="section-desc">Click "Launch Interactive Demo" to test each live application directly within this portfolio.</p>
+        <p class="section-desc">Click "Launch Interactive Demo" to test each application directly within this portfolio.</p>
       </div>
 
       <div class="projects-list">
@@ -279,7 +281,8 @@
               <button class="btn btn-primary btn-sm" onclick="openDemo('rag')">
                 <i class="fa-solid fa-play"></i> Launch Interactive Demo
               </button>
-              <button class="btn btn-outline btn-sm" onclick="openGithubRequestModal('3d-ai-pdf-chatbot')">
+              <!-- Protected GitHub Access Gate -->
+              <button class="btn btn-outline btn-sm" onclick="openGateModal('github', 'https://github.com/ritammanna/3d-ai-pdf-chatbot', 'AI 3D PDF Chatbot Repo')">
                 <i class="fa-brands fa-github"></i> View GitHub Repo
               </button>
             </div>
@@ -288,10 +291,10 @@
             <div class="preview-mockup">
               <div class="mockup-header">
                 <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                <span class="mockup-title">threed-ai-pdf-chatbot.onrender.com</span>
+                <span class="mockup-title">rag-neural-engine.local:8000</span>
               </div>
               <div class="mockup-image-wrap">
-                <img src="assets/project_ai.png" alt="AI 3D PDF Chatbot UI" class="mockup-img">
+                <img src="assets/project_ai.svg" alt="AI 3D PDF Chatbot UI" class="mockup-img">
                 <div class="preview-overlay-tag"><i class="fa-solid fa-play"></i> Interactive Demo</div>
               </div>
             </div>
@@ -321,7 +324,8 @@
               <button class="btn btn-primary btn-sm" onclick="openDemo('recipe')">
                 <i class="fa-solid fa-play"></i> Launch Interactive Demo
               </button>
-              <button class="btn btn-outline btn-sm" onclick="openGithubRequestModal('RitBite-recipe-app')">
+              <!-- Protected GitHub Access Gate -->
+              <button class="btn btn-outline btn-sm" onclick="openGateModal('github', 'https://github.com/ritammanna/RitBite-recipe-app', 'RitBite Recipe App Repo')">
                 <i class="fa-brands fa-github"></i> View GitHub Repo
               </button>
             </div>
@@ -330,10 +334,10 @@
             <div class="preview-mockup">
               <div class="mockup-header">
                 <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                <span class="mockup-title">rit-bite-recipe-app.vercel.app</span>
+                <span class="mockup-title">ritbite-discovery.app</span>
               </div>
               <div class="mockup-image-wrap">
-                <img src="assets/project_recipe.png" alt="RitBite Recipe App UI" class="mockup-img">
+                <img src="assets/project_recipe.svg" alt="RitBite Recipe App UI" class="mockup-img">
                 <div class="preview-overlay-tag"><i class="fa-solid fa-play"></i> Interactive Demo</div>
               </div>
             </div>
@@ -363,7 +367,8 @@
               <button class="btn btn-primary btn-sm" onclick="openDemo('job')">
                 <i class="fa-solid fa-play"></i> Launch Interactive Demo
               </button>
-              <button class="btn btn-outline btn-sm" onclick="openGithubRequestModal('job-website')">
+              <!-- Protected GitHub Access Gate -->
+              <button class="btn btn-outline btn-sm" onclick="openGateModal('github', 'https://github.com/ritammanna/job-website', 'Job Portal Repo')">
                 <i class="fa-brands fa-github"></i> View GitHub Repo
               </button>
             </div>
@@ -372,10 +377,10 @@
             <div class="preview-mockup">
               <div class="mockup-header">
                 <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                <span class="mockup-title">jobconnect-portal-m6nc.vercel.app</span>
+                <span class="mockup-title">jobportal-recruit.io</span>
               </div>
               <div class="mockup-image-wrap">
-                <img src="assets/project_job.png" alt="Job Portal UI" class="mockup-img">
+                <img src="assets/project_job.svg" alt="Job Portal UI" class="mockup-img">
                 <div class="preview-overlay-tag"><i class="fa-solid fa-play"></i> Interactive Demo</div>
               </div>
             </div>
@@ -403,7 +408,7 @@
             
             <div class="timeline-item glass-card">
               <div class="timeline-dot"></div>
-              <div class="timeline-year">2023 - 2026</div>
+              <div class="timeline-year">2022 - 2026</div>
               <h4 class="timeline-title">Bachelor of Technology (B.Tech) - Computer Science & Engineering</h4>
               <p class="timeline-sub">Supreme Knowledge Foundation Group of Institutions (MAKAUT)</p>
             </div>
@@ -478,7 +483,7 @@
       <div class="section-header">
         <span class="section-tag"><i class="fa-regular fa-envelope"></i> Get In Touch</span>
         <h2 class="section-title">Connect with <span class="gradient-text">Ritam Manna</span></h2>
-        <p class="section-desc">Personal contact details and source code are protected. Direct inquiries are delivered straight to ritamsuman89@gmail.com.</p>
+        <p class="section-desc">Direct contact information is protected against scrapers. Use the form below to connect or request my full CV.</p>
       </div>
 
       <div class="contact-grid">
@@ -490,8 +495,8 @@
             <div>
               <div class="card-label">Official Email</div>
               <div class="masked-info">
-                <span>ritamsuman•••••@gmail.com</span>
-                <button class="reveal-btn" onclick="openContactModal('email')"><i class="fa-solid fa-lock"></i> Request</button>
+                <span>ritamsuman89••••@gmail.com</span>
+                <button class="reveal-btn" onclick="openGateModal('contact', '', 'Email Connect')"><i class="fa-solid fa-paper-plane"></i> Contact</button>
               </div>
             </div>
           </div>
@@ -502,7 +507,7 @@
               <div class="card-label">Phone & WhatsApp</div>
               <div class="masked-info">
                 <span>+91 8942••••••</span>
-                <button class="reveal-btn" onclick="openContactModal('phone')"><i class="fa-solid fa-lock"></i> Request</button>
+                <button class="reveal-btn" onclick="openGateModal('contact', '', 'Phone Contact Request')"><i class="fa-solid fa-lock"></i> Request</button>
               </div>
             </div>
           </div>
@@ -511,15 +516,16 @@
             <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
             <div>
               <div class="card-label">Location</div>
-              <div class="info-val">Purba Bardhaman, West Bengal (Open to Relocation)</div>
+              <div class="info-val">Purba Bardhaman, West Bengal – 713423 (Open to Relocation)</div>
             </div>
           </div>
 
           <div class="glass-card contact-card">
             <div class="contact-icon"><i class="fa-solid fa-file-pdf"></i></div>
             <div>
-              <div class="card-label">Curriculum Vitae (2026 Edition)</div>
-              <button class="btn btn-primary btn-sm mt-2" onclick="openCvRequestModal()">
+              <div class="card-label">Curriculum Vitae</div>
+              <div class="info-val">Protected ATS-Friendly PDF (Verified Release)</div>
+              <button class="btn btn-primary btn-sm mt-2" onclick="openGateModal('cv', 'Bottom CV Card')">
                 <i class="fa-solid fa-download"></i> Request CV Download
               </button>
             </div>
@@ -527,29 +533,29 @@
 
         </div>
 
-        <!-- Direct Message Form linked directly to your Gmail -->
+        <!-- Direct Message Form -->
         <div class="glass-card form-card">
           <h3>Send a Direct Message</h3>
-          <p class="form-sub">Inquiries are forwarded directly to <strong>ritamsuman89@gmail.com</strong>.</p>
-          <form id="contactForm" onsubmit="handleDirectContact(event)">
+          <p class="form-sub">Messages are sent directly to ritamsuman89@gmail.com immediately.</p>
+          <form id="contactForm" onsubmit="handleContactSubmit(event)">
             <div class="form-group">
               <label for="senderName">Your Name / Organization</label>
-              <input type="text" id="senderName" class="form-control" placeholder="HR / Recruiter / Team Lead" required>
+              <input type="text" id="senderName" class="form-control" placeholder="e.g. Talent Acquisition @ MNC" required>
             </div>
             <div class="form-group">
-              <label for="senderEmail">Your Email</label>
-              <input type="email" id="senderEmail" class="form-control" placeholder="name@company.com" required>
+              <label for="senderEmail">Your Work Email</label>
+              <input type="email" id="senderEmail" class="form-control" placeholder="hr@company.com" required>
             </div>
             <div class="form-group">
               <label for="senderSubject">Subject</label>
-              <input type="text" id="senderSubject" class="form-control" placeholder="Job Opportunity / Interview Invitation" required>
+              <input type="text" id="senderSubject" class="form-control" placeholder="Interview / Job Opportunity / Collaboration" required>
             </div>
             <div class="form-group">
               <label for="senderMessage">Message</label>
-              <textarea id="senderMessage" rows="4" class="form-control" placeholder="Details about the role or project..." required></textarea>
+              <textarea id="senderMessage" rows="4" class="form-control" placeholder="Details about the role, location, or project..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">
-              <i class="fa-solid fa-paper-plane"></i> Send Direct Email
+            <button type="submit" id="contactSubmitBtn" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-paper-plane"></i> Send Inquiry
             </button>
           </form>
         </div>
@@ -562,10 +568,10 @@
     <div class="container footer-content">
       <div class="footer-brand">
         <span class="brand-code">&lt;RM/&gt;</span>
-        <span>Ritam Manna • Full-Stack MERN & AI Engineer</span>
+        <span>Ritam Manna • Software & AI Engineer</span>
       </div>
       <div class="footer-links">
-        <a href="javascript:void(0)" onclick="openGithubRequestModal('Profile')"><i class="fa-brands fa-github"></i> GitHub (Request)</a>
+        <button class="footer-btn-link" onclick="openGateModal('github', 'https://github.com/ritammanna', 'Footer GitHub Link')"><i class="fa-brands fa-github"></i> GitHub</button>
         <a href="https://www.linkedin.com/in/ritam-manna-0491112b1" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
         <a href="#hero"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
       </div>
@@ -574,7 +580,7 @@
 
   <!-- ================= MODALS ================= -->
 
-  <!-- 1. Interactive Project Demo Modal (Loads Real Apps in Frame) -->
+  <!-- 1. Interactive Project Demo Modal -->
   <div class="modal-backdrop" id="demoModal">
     <div class="modal-box modal-lg">
       <div class="modal-header">
@@ -584,50 +590,65 @@
         </div>
         <button class="modal-close" onclick="closeDemo()"><i class="fa-solid fa-xmark"></i></button>
       </div>
-      <div class="modal-body" id="demoBody">
-        <!-- Live Web App Frame injected via app.js -->
-      </div>
+      <div class="modal-body" id="demoBody"></div>
     </div>
   </div>
 
-  <!-- 2. Unified Request Modal for CV & GitHub (Direct Email Alert to ritamsuman89@gmail.com) -->
-  <div class="modal-backdrop" id="accessModal">
+  <!-- 2. Security Access Gate Modal (For CV & GitHub Access with Instant Gmail Notification) -->
+  <div class="modal-backdrop" id="gateModal">
     <div class="modal-box">
       <div class="modal-header">
         <div class="modal-title-wrap">
-          <i class="fa-solid fa-shield-halved text-blue" id="modalIcon"></i>
-          <h3 id="modalTitle">Request Access</h3>
+          <i class="fa-solid fa-shield-halved text-blue" id="gateIcon"></i>
+          <h3 id="gateTitle">Security Access Request</h3>
         </div>
-        <button class="modal-close" onclick="closeAccessModal()"><i class="fa-solid fa-xmark"></i></button>
+        <button class="modal-close" onclick="closeGateModal()"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <div class="modal-body">
-        <p class="modal-desc" id="modalDesc">
-          Please submit your professional details below. Your request will be directly dispatched to <strong>ritamsuman89@gmail.com</strong>.
+        <p class="modal-desc" id="gateDesc">
+          To protect personal contact information and private project assets against web scrapers, please enter your professional details. A real-time access verification request will be delivered to <strong>ritamsuman89@gmail.com</strong>.
         </p>
 
-        <form id="accessRequestForm" onsubmit="submitAccessRequest(event)">
+        <form id="gateForm" onsubmit="handleGateRequest(event)">
+          <input type="hidden" id="gateType" value="">
+          <input type="hidden" id="gateTargetUrl" value="">
+          
           <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" id="reqName" class="form-control" placeholder="HR / Recruiter / Hiring Manager" required>
+            <label>Your Full Name</label>
+            <input type="text" id="gateName" class="form-control" placeholder="HR / Recruiter / Hiring Manager" required>
           </div>
           <div class="form-group">
             <label>Work Email</label>
-            <input type="email" id="reqEmail" class="form-control" placeholder="recruiter@company.com" required>
+            <input type="email" id="gateEmail" class="form-control" placeholder="hr@company.com" required>
           </div>
           <div class="form-group">
-            <label>Company / Organization</label>
-            <input type="text" id="reqCompany" class="form-control" placeholder="e.g. Google, TCS, Startup" required>
+            <label>Organization / Company</label>
+            <input type="text" id="gateCompany" class="form-control" placeholder="e.g. MNC, Tech Startup, Consultancy" required>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">
-            <i class="fa-solid fa-paper-plane"></i> Submit Request to Ritam Manna
+          <div class="form-group">
+            <label>Purpose of Access</label>
+            <input type="text" id="gatePurpose" class="form-control" placeholder="Job Interview / Technical Code Review / Project Evaluation" required>
+          </div>
+
+          <button type="submit" id="gateSubmitBtn" class="btn btn-primary btn-block">
+            <i class="fa-solid fa-paper-plane"></i> Send Request to Ritam
           </button>
         </form>
 
-        <div class="cv-download-success" id="accessSuccess" style="display: none;">
+        <div class="cv-download-success" id="gateSuccess" style="display: none;">
           <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
-          <h4 id="successTitle">Request Forwarded!</h4>
-          <p id="successDesc">Your verification details have been sent to Ritam's email.</p>
-          <div id="successAction"></div>
+          <h4 id="gateSuccessTitle">Access Request Dispatched!</h4>
+          <p id="gateSuccessMsg" style="color:#94a3b8; font-size:0.9rem; line-height:1.6; margin-top:8px;">
+            A direct verification email has been sent to <strong>ritamsuman89@gmail.com</strong>. Upon approval, you will receive your direct secure access link at your provided work email.
+          </p>
+          <div id="gatePasscodeBox" style="margin-top:16px; padding:12px; background:rgba(0, 210, 255, 0.08); border:1px solid rgba(0, 210, 255, 0.3); border-radius:10px;">
+            <span style="font-size:0.8rem; color:#94a3b8;">Already have Ritam's Approval Passcode?</span>
+            <div style="display:flex; gap:8px; margin-top:8px;">
+              <input type="password" id="gatePasscodeInput" class="form-control" placeholder="Enter Access Code">
+              <button class="btn btn-primary btn-sm" onclick="verifyGatePasscode()"><i class="fa-solid fa-unlock"></i> Unlock</button>
+            </div>
+            <div id="gatePasscodeError" style="color:#ef4444; font-size:0.75rem; margin-top:4px; display:none;">Invalid code. Please wait for email confirmation.</div>
+          </div>
         </div>
       </div>
     </div>

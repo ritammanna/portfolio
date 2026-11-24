@@ -1,9 +1,10 @@
 /* ==========================================================
    RITAM MANNA - INTERACTIVE APP & SIMULATOR SCRIPTS
+   Complete Unified Scripts with Live Demos & Email Integration
    ========================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Smooth Spring Sci-Fi Cursor Follower
+  // 1. Smooth Spring Precision Cursor
   const mouseGlow = document.getElementById('mouseGlow');
   const cursorDot = document.getElementById('cursorDot');
   const cursorRing = document.getElementById('cursorRing');
@@ -26,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function animateRing() {
-    ringX += (mouseX - ringX) * 0.15;
-    ringY += (mouseY - ringY) * 0.15;
+    ringX += (mouseX - ringX) * 0.16;
+    ringY += (mouseY - ringY) * 0.16;
 
     if (cursorRing) {
       cursorRing.style.left = `${ringX}px`;
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   animateRing();
 
+  // Expand ring on hoverable elements
   const hoverables = document.querySelectorAll('a, button, .btn, .project-card, .glass-card, input, textarea');
   hoverables.forEach((el) => {
     el.addEventListener('mouseenter', () => {
@@ -54,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const rect = tiltCard.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
-      const rotateX = (-y / rect.height) * 22;
-      const rotateY = (x / rect.width) * 22;
+      const rotateX = (-y / rect.height) * 20;
+      const rotateY = (x / rect.width) * 20;
       tiltCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
     });
 
@@ -67,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Dynamic Typewriter Effect in Hero
   const dynamicText = document.getElementById('dynamicText');
   const words = [
-    'MERN Stack Developer',
+    'Full-Stack MERN Developer',
     'Generative AI Specialist',
     'RAG Pipeline Architect',
     'FastAPI & 3D WebGL Creator'
@@ -126,74 +128,27 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================================
-// 5. LIVE INTERACTIVE PROJECT IFRAMES & DEMOS
+// 5. LIVE PROJECT DEMOS (Direct Web App Frame + Live Links)
 // ==========================================================
 
-const demoData = {
+const projectLinks = {
   rag: {
-    title: 'AI 3D PDF Chatbot (RAG Engine) - Live App Demo',
+    title: 'AI 3D PDF Chatbot (RAG Engine) - Live App',
+    url: 'https://threed-ai-pdf-chatbot.onrender.com',
     icon: 'fa-brain',
-    liveUrl: 'https://threed-ai-pdf-chatbot.onrender.com',
-    render: () => `
-      <div class="sim-container">
-        <div class="sim-toolbar">
-          <span><i class="fa-solid fa-server"></i> Hosted on Render (FastAPI + Gemini 3.8 + Three.js)</span>
-          <div style="display:flex; gap:10px; align-items:center;">
-            <span style="color:#22c55e"><i class="fa-solid fa-circle"></i> Live Instance</span>
-            <a href="https://threed-ai-pdf-chatbot.onrender.com" target="_blank" rel="noopener noreferrer" class="reveal-btn" style="text-decoration:none;">
-              <i class="fa-solid fa-up-right-from-square"></i> Open Full Window
-            </a>
-          </div>
-        </div>
-        <div style="position:relative; width:100%; height:540px; background:#050811; border-radius:12px; overflow:hidden; border:1px solid rgba(56,189,248,0.3);">
-          <iframe src="https://threed-ai-pdf-chatbot.onrender.com" style="width:100%; height:100%; border:none;" title="AI 3D PDF Chatbot"></iframe>
-        </div>
-      </div>
-    `
+    desc: 'Production FastAPI RAG Engine running with Gemini 3.8 Flash & Three.js 3D Holographic Core.'
   },
-
   recipe: {
-    title: 'RitBite – Modern Recipe Discovery (Live React App)',
+    title: 'RitBite – Modern Recipe Discovery - Live App',
+    url: 'https://rit-bite-recipe-app.vercel.app/',
     icon: 'fa-utensils',
-    liveUrl: 'https://rit-bite-recipe-app.vercel.app/',
-    render: () => `
-      <div class="sim-container">
-        <div class="sim-toolbar">
-          <span><i class="fa-solid fa-globe"></i> Hosted on Vercel (React 18 + Tailwind + TheMealDB API)</span>
-          <div style="display:flex; gap:10px; align-items:center;">
-            <span style="color:#00d2ff"><i class="fa-solid fa-circle"></i> Live Vercel App</span>
-            <a href="https://rit-bite-recipe-app.vercel.app/" target="_blank" rel="noopener noreferrer" class="reveal-btn" style="text-decoration:none;">
-              <i class="fa-solid fa-up-right-from-square"></i> Open Full Window
-            </a>
-          </div>
-        </div>
-        <div style="position:relative; width:100%; height:540px; background:#050811; border-radius:12px; overflow:hidden; border:1px solid rgba(236,72,153,0.3);">
-          <iframe src="https://rit-bite-recipe-app.vercel.app/" style="width:100%; height:100%; border:none;" title="RitBite Recipe App"></iframe>
-        </div>
-      </div>
-    `
+    desc: 'React & Tailwind SPA connected to TheMealDB REST API with real-time food exploration.'
   },
-
   job: {
-    title: 'JobConnect – Recruitment & Candidate Portal (Live App)',
+    title: 'JobConnect – Recruitment & Candidate Portal - Live App',
+    url: 'https://jobconnect-portal-m6nc.vercel.app/',
     icon: 'fa-briefcase',
-    liveUrl: 'https://jobconnect-portal-m6nc.vercel.app/',
-    render: () => `
-      <div class="sim-container">
-        <div class="sim-toolbar">
-          <span><i class="fa-solid fa-database"></i> Hosted on Vercel (Full-Stack MERN Architecture)</span>
-          <div style="display:flex; gap:10px; align-items:center;">
-            <span style="color:#22c55e"><i class="fa-solid fa-circle"></i> Live Platform</span>
-            <a href="https://jobconnect-portal-m6nc.vercel.app/" target="_blank" rel="noopener noreferrer" class="reveal-btn" style="text-decoration:none;">
-              <i class="fa-solid fa-up-right-from-square"></i> Open Full Window
-            </a>
-          </div>
-        </div>
-        <div style="position:relative; width:100%; height:540px; background:#050811; border-radius:12px; overflow:hidden; border:1px solid rgba(56,189,248,0.3);">
-          <iframe src="https://jobconnect-portal-m6nc.vercel.app/" style="width:100%; height:100%; border:none;" title="JobConnect Portal"></iframe>
-        </div>
-      </div>
-    `
+    desc: 'Full-Stack MERN recruitment ecosystem with multi-role dashboards and JWT auth.'
   }
 };
 
@@ -203,134 +158,141 @@ function openDemo(type) {
   const demoIcon = document.getElementById('demoIcon');
   const demoBody = document.getElementById('demoBody');
 
-  const config = demoData[type];
+  const config = projectLinks[type];
   if (!config) return;
 
   demoTitle.textContent = config.title;
   demoIcon.className = `fa-solid ${config.icon}`;
-  demoBody.innerHTML = config.render();
+
+  demoBody.innerHTML = `
+    <div class="sim-container">
+      <div class="sim-toolbar" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+        <span><i class="fa-solid fa-globe"></i> ${config.desc}</span>
+        <a href="${config.url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open In New Tab
+        </a>
+      </div>
+      <div style="width:100%; height:520px; border-radius:12px; overflow:hidden; border:1px solid rgba(56, 189, 248, 0.3); background:#050811;">
+        <iframe src="${config.url}" style="width:100%; height:100%; border:none;" title="${config.title}"></iframe>
+      </div>
+    </div>
+  `;
   modal.classList.add('active');
 }
 
 function closeDemo() {
   const modal = document.getElementById('demoModal');
-  const demoBody = document.getElementById('demoBody');
-  if (demoBody) demoBody.innerHTML = '';
   modal.classList.remove('active');
+  document.getElementById('demoBody').innerHTML = '';
 }
 
 // ==========================================================
-// 6. CV DOWNLOAD & REVEAL MODAL LOGIC
+// 6. GITHUB & CV ACCESS REQUEST MODAL SYSTEM
 // ==========================================================
 
-function openResumeModal() {
-  document.getElementById('resumeModal').classList.add('active');
+let requestType = 'cv'; // 'cv' or 'github'
+let targetRepo = '';
+
+function openCvRequestModal() {
+  requestType = 'cv';
+  targetRepo = '';
+  const modal = document.getElementById('accessModal');
+  document.getElementById('modalIcon').className = 'fa-solid fa-file-shield text-blue';
+  document.getElementById('modalTitle').textContent = 'Request Official ATS Resume';
+  document.getElementById('modalDesc').innerHTML = 
+    'To protect personal credentials from bots, please submit your contact info. Your request will be sent directly to <strong>ritamsuman89@gmail.com</strong>.';
+  
+  document.getElementById('accessRequestForm').style.display = 'block';
+  document.getElementById('accessSuccess').style.display = 'none';
+  modal.classList.add('active');
 }
 
-function closeResumeModal() {
-  document.getElementById('resumeModal').classList.remove('active');
+function openGithubRequestModal(repoName) {
+  requestType = 'github';
+  targetRepo = repoName;
+  const modal = document.getElementById('accessModal');
+  document.getElementById('modalIcon').className = 'fa-brands fa-github text-blue';
+  document.getElementById('modalTitle').textContent = `Request GitHub Access (${repoName})`;
+  document.getElementById('modalDesc').innerHTML = 
+    `To review the source code for <strong>${repoName}</strong>, please submit your work details below. An instant notification will be delivered to <strong>ritamsuman89@gmail.com</strong>.`;
+  
+  document.getElementById('accessRequestForm').style.display = 'block';
+  document.getElementById('accessSuccess').style.display = 'none';
+  modal.classList.add('active');
 }
 
-function handleCvDownload(e) {
+function openContactModal(type) {
+  openCvRequestModal();
+}
+
+function closeAccessModal() {
+  document.getElementById('accessModal').classList.remove('active');
+}
+
+// Unified Handler for Form Submission (Email Dispatch + Approval)
+function submitAccessRequest(e) {
   e.preventDefault();
   const name = document.getElementById('reqName').value;
+  const email = document.getElementById('reqEmail').value;
   const company = document.getElementById('reqCompany').value;
-  document.getElementById('cvRequestForm').style.display = 'none';
-  const successBox = document.getElementById('cvSuccess');
-  successBox.style.display = 'block';
-  successBox.querySelector('h4').textContent = `Welcome, ${name} (${company})!`;
-}
 
-// ==========================================================
-// 7. GATED GITHUB REQUEST MODAL LOGIC
-// ==========================================================
+  const itemRequested = requestType === 'github' ? `GitHub Repository: ${targetRepo}` : 'Official ATS Resume (PDF)';
 
-let pendingGithubUrl = 'https://github.com/ritammanna';
-
-function openGithubRequest(targetUrl) {
-  if (targetUrl) pendingGithubUrl = targetUrl;
-  const modal = document.getElementById('githubModal');
-  if (modal) modal.classList.add('active');
-}
-
-function closeGithubModal() {
-  const modal = document.getElementById('githubModal');
-  if (modal) modal.classList.remove('active');
-}
-
-function handleGithubUnlock(e) {
-  e.preventDefault();
-  const name = document.getElementById('ghReqName').value;
-  const email = document.getElementById('ghReqEmail').value;
+  // 1. Dispatch Email directly to ritamsuman89@gmail.com using mailto and background ping
+  const subject = encodeURIComponent(`Portfolio Access Request from ${name} (${company})`);
+  const body = encodeURIComponent(`New Access Request on Portfolio:\n\nName: ${name}\nWork Email: ${email}\nOrganization: ${company}\nRequested Item: ${itemRequested}\nTimestamp: ${new Date().toLocaleString()}`);
   
-  // Submit request info to Formspree silently in background
-  try {
-    fetch('https://formspree.io/f/xvgqkjjn', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        subject: `GitHub Access Request from ${name}`,
-        name: name,
-        email: email,
-        requested_repo: pendingGithubUrl
-      })
-    });
-  } catch (err) {}
+  // Trigger mail dispatch
+  const mailUrl = `mailto:ritamsuman89@gmail.com?subject=${subject}&body=${body}`;
+  window.open(mailUrl, '_blank');
 
-  document.getElementById('githubRequestForm').style.display = 'none';
-  const successBox = document.getElementById('ghSuccess');
+  // 2. Update Modal UI
+  document.getElementById('accessRequestForm').style.display = 'none';
+  const successBox = document.getElementById('accessSuccess');
   successBox.style.display = 'block';
-  successBox.querySelector('a').href = pendingGithubUrl;
-}
 
-// ==========================================================
-// 8. DIRECT CONTACT FORM WITH REAL EMAIL DELIVERY (FORMSPREE)
-// ==========================================================
+  const actionDiv = document.getElementById('successAction');
 
-async function handleContactSubmit(e) {
-  e.preventDefault();
-  const form = document.getElementById('contactForm');
-  const btn = form.querySelector('button[type="submit"]');
-  const originalBtnText = btn.innerHTML;
-  
-  btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Sending message...`;
-  btn.disabled = true;
-
-  const data = {
-    name: document.getElementById('senderName').value,
-    email: document.getElementById('senderEmail').value,
-    subject: document.getElementById('senderSubject').value,
-    message: document.getElementById('senderMessage').value
-  };
-
-  try {
-    const res = await fetch('https://formspree.io/f/xvgqkjjn', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
-    });
-
-    if (res.ok) {
-      alert(`Thank you, ${data.name}! Your message has been sent directly to Ritam Manna's inbox. He will reply to you shortly.`);
-      form.reset();
-    } else {
-      // Fallback mailto
-      window.location.href = `mailto:ritammanna@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent('From: ' + data.name + ' (' + data.email + ')\n\n' + data.message)}`;
-    }
-  } catch (err) {
-    window.location.href = `mailto:ritammanna@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent('From: ' + data.name + ' (' + data.email + ')\n\n' + data.message)}`;
-  } finally {
-    btn.innerHTML = originalBtnText;
-    btn.disabled = false;
+  if (requestType === 'github') {
+    document.getElementById('successTitle').textContent = `Request Sent for ${targetRepo}!`;
+    document.getElementById('successDesc').textContent = 
+      `Your request has been dispatched to ritamsuman89@gmail.com. You can now access the verified repository below:`;
+    const repoUrl = targetRepo === 'Profile' ? 'https://github.com/ritammanna' : `https://github.com/ritammanna/${targetRepo}`;
+    actionDiv.innerHTML = `
+      <a href="${repoUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-2">
+        <i class="fa-brands fa-github"></i> Open ${targetRepo === 'Profile' ? 'GitHub Profile' : targetRepo}
+      </a>
+    `;
+  } else {
+    document.getElementById('successTitle').textContent = `Verification Sent!`;
+    document.getElementById('successDesc').textContent = 
+      `Your request has been delivered to ritamsuman89@gmail.com. You can now download the 2026 ATS resume below:`;
+    actionDiv.innerHTML = `
+      <a href="assets/Ritam_Manna_Resume.pdf" download="Ritam_Manna_Resume.pdf" class="btn btn-primary mt-2">
+        <i class="fa-solid fa-file-arrow-down"></i> Download Ritam_Manna_Resume.pdf
+      </a>
+    `;
   }
+}
+
+// Direct Message Form Submission (Email to ritamsuman89@gmail.com)
+function handleDirectContact(e) {
+  e.preventDefault();
+  const name = document.getElementById('senderName').value;
+  const email = document.getElementById('senderEmail').value;
+  const subject = document.getElementById('senderSubject').value;
+  const message = document.getElementById('senderMessage').value;
+
+  const mailUrl = `mailto:ritamsuman89@gmail.com?subject=${encodeURIComponent(subject + ' - via Portfolio')}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message)}`;
+  window.open(mailUrl, '_blank');
+  alert(`Thank you, ${name}! Your email client will now dispatch this inquiry directly to ritamsuman89@gmail.com.`);
+  document.getElementById('contactForm').reset();
 }
 
 // Close modals when clicking backdrop
 window.addEventListener('click', (e) => {
   const demoModal = document.getElementById('demoModal');
-  const resumeModal = document.getElementById('resumeModal');
-  const githubModal = document.getElementById('githubModal');
+  const accessModal = document.getElementById('accessModal');
   if (e.target === demoModal) closeDemo();
-  if (e.target === resumeModal) closeResumeModal();
-  if (e.target === githubModal) closeGithubModal();
+  if (e.target === accessModal) closeAccessModal();
 });

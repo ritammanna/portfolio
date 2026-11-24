@@ -1,157 +1,142 @@
 /* ==========================================================
-   THREE.JS 3D INTERACTIVE NEURAL MESH BACKGROUND
-   Responds to mouse movement, scroll, and subtle oscillations
+   THREE.JS 3D INTERACTIVE DEVELOPER NEXUS BACKGROUND
+   Professional, Subtle, High-Performance 3D Ambient Canvas
    ========================================================== */
 
-(function initThreeBackground() {
+(function initProfessional3D() {
   const container = document.getElementById('canvas-container');
   if (!container || typeof THREE === 'undefined') return;
 
   const scene = new THREE.Scene();
 
   const camera = new THREE.PerspectiveCamera(
-    60,
+    55,
     window.innerWidth / window.innerHeight,
     0.1,
     1000
   );
-  camera.position.z = 80;
+  camera.position.z = 70;
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.innerHTML = '';
   container.appendChild(renderer.domElement);
 
-  // Group to rotate with mouse
-  const sceneGroup = new THREE.Group();
-  scene.add(sceneGroup);
+  const mainGroup = new THREE.Group();
+  scene.add(mainGroup);
 
-  // 1. Particle Constellation
-  const particleCount = 220;
+  // 1. Particle Constellation Grid
+  const count = 180;
   const geometry = new THREE.BufferGeometry();
-  const positions = new Float32Array(particleCount * 3);
-  const colors = new Float32Array(particleCount * 3);
+  const positions = new Float32Array(count * 3);
+  const colors = new Float32Array(count * 3);
 
-  const color1 = new THREE.Color(0x00d2ff); // Cyan
-  const color2 = new THREE.Color(0x8b5cf6); // Purple
-  const color3 = new THREE.Color(0x3b82f6); // Blue
+  const c1 = new THREE.Color(0x00d2ff); // Cyan
+  const c2 = new THREE.Color(0x3b82f6); // Royal Blue
+  const c3 = new THREE.Color(0x8b5cf6); // Soft Purple
 
-  for (let i = 0; i < particleCount; i++) {
-    const x = (Math.random() - 0.5) * 160;
-    const y = (Math.random() - 0.5) * 160;
-    const z = (Math.random() - 0.5) * 120;
+  for (let i = 0; i < count; i++) {
+    positions[i * 3] = (Math.random() - 0.5) * 150;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 150;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 100;
 
-    positions[i * 3] = x;
-    positions[i * 3 + 1] = y;
-    positions[i * 3 + 2] = z;
-
-    const mixedColor = i % 3 === 0 ? color1 : (i % 3 === 1 ? color2 : color3);
-    colors[i * 3] = mixedColor.r;
-    colors[i * 3 + 1] = mixedColor.g;
-    colors[i * 3 + 2] = mixedColor.b;
+    const chosen = i % 3 === 0 ? c1 : (i % 3 === 1 ? c2 : c3);
+    colors[i * 3] = chosen.r;
+    colors[i * 3 + 1] = chosen.g;
+    colors[i * 3 + 2] = chosen.b;
   }
 
   geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
   geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
   const pMaterial = new THREE.PointsMaterial({
-    size: 2.2,
+    size: 2.4,
     vertexColors: true,
     transparent: true,
-    opacity: 0.75,
+    opacity: 0.8,
     blending: THREE.AdditiveBlending
   });
 
-  const particles = new THREE.Points(geometry, pMaterial);
-  sceneGroup.add(particles);
+  const particleMesh = new THREE.Points(geometry, pMaterial);
+  mainGroup.add(particleMesh);
 
-  // 2. 3D Wireframe Icosahedron Core (AI Neural Nexus)
-  const icosaGeometry = new THREE.IcosahedronGeometry(22, 1);
-  const wireMaterial = new THREE.MeshBasicMaterial({
+  // 2. Elegant Geometric Developer Nodes (Wireframe Dodecahedron & Rings)
+  const nodeGroup = new THREE.Group();
+  nodeGroup.position.set(30, 8, -15);
+
+  const nodeGeo = new THREE.DodecahedronGeometry(18, 1);
+  const nodeMat = new THREE.MeshBasicMaterial({
     color: 0x00d2ff,
     wireframe: true,
     transparent: true,
-    opacity: 0.18
+    opacity: 0.16
   });
-  const icosaMesh = new THREE.Mesh(icosaGeometry, wireMaterial);
-  icosaMesh.position.set(35, 10, -20);
-  sceneGroup.add(icosaMesh);
+  const nodeMesh = new THREE.Mesh(nodeGeo, nodeMat);
+  nodeGroup.add(nodeMesh);
 
-  // Inner floating core
-  const coreGeo = new THREE.OctahedronGeometry(10, 0);
-  const coreMat = new THREE.MeshBasicMaterial({
+  const innerGeo = new THREE.OctahedronGeometry(8, 0);
+  const innerMat = new THREE.MeshBasicMaterial({
     color: 0x8b5cf6,
     wireframe: true,
     transparent: true,
     opacity: 0.35
   });
-  const coreMesh = new THREE.Mesh(coreGeo, coreMat);
-  coreMesh.position.copy(icosaMesh.position);
-  sceneGroup.add(coreMesh);
+  const innerMesh = new THREE.Mesh(innerGeo, innerMat);
+  nodeGroup.add(innerMesh);
 
-  // 3. Floating Orbital Torus
-  const torusGeo = new THREE.TorusGeometry(32, 0.4, 8, 50);
-  const torusMat = new THREE.MeshBasicMaterial({
+  const ringGeo = new THREE.TorusGeometry(26, 0.3, 8, 50);
+  const ringMat = new THREE.MeshBasicMaterial({
     color: 0x3b82f6,
     transparent: true,
-    opacity: 0.12
+    opacity: 0.2
   });
-  const torus = new THREE.Mesh(torusGeo, torusMat);
-  torus.position.copy(icosaMesh.position);
-  torus.rotation.x = Math.PI / 3;
-  sceneGroup.add(torus);
+  const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+  ringMesh.rotation.x = Math.PI / 3;
+  nodeGroup.add(ringMesh);
 
-  // Mouse Interaction coordinates
-  let mouseX = 0;
-  let mouseY = 0;
-  let targetX = 0;
-  let targetY = 0;
+  mainGroup.add(nodeGroup);
+
+  // Mouse & Scroll Parallax
+  let mouseX = 0, mouseY = 0;
+  let targetX = 0, targetY = 0;
+  let scrollY = 0;
 
   window.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX - window.innerWidth / 2) * 0.05;
-    mouseY = (e.clientY - window.innerHeight / 2) * 0.05;
+    mouseX = (e.clientX - window.innerWidth / 2) * 0.04;
+    mouseY = (e.clientY - window.innerHeight / 2) * 0.04;
   });
 
-  // Scroll Parallax
-  let scrollY = 0;
   window.addEventListener('scroll', () => {
     scrollY = window.scrollY;
   });
 
-  // Resize handler
   window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
   });
 
-  // Animation Loop
-  let clock = new THREE.Clock();
+  const clock = new THREE.Clock();
 
   function animate() {
     requestAnimationFrame(animate);
+    const elapsed = clock.getElapsedTime();
 
-    const elapsedTime = clock.getElapsedTime();
-
-    // Smooth mouse follow
     targetX += (mouseX - targetX) * 0.05;
     targetY += (mouseY - targetY) * 0.05;
 
-    sceneGroup.rotation.y = targetX * 0.008 + elapsedTime * 0.03;
-    sceneGroup.rotation.x = targetY * 0.008;
-    sceneGroup.position.y = -scrollY * 0.02;
+    mainGroup.rotation.y = targetX * 0.006 + elapsed * 0.025;
+    mainGroup.rotation.x = targetY * 0.006;
+    mainGroup.position.y = -scrollY * 0.015;
 
-    // Internal object rotations
-    icosaMesh.rotation.x = elapsedTime * 0.1;
-    icosaMesh.rotation.y = elapsedTime * 0.15;
+    nodeMesh.rotation.x = elapsed * 0.08;
+    nodeMesh.rotation.y = elapsed * 0.12;
 
-    coreMesh.rotation.x = -elapsedTime * 0.2;
-    coreMesh.rotation.z = elapsedTime * 0.25;
+    innerMesh.rotation.x = -elapsed * 0.15;
+    innerMesh.rotation.z = elapsed * 0.2;
 
-    torus.rotation.z = elapsedTime * 0.08;
-
-    // Gentle particle pulse
-    pMaterial.size = 2.0 + Math.sin(elapsedTime * 2) * 0.5;
+    ringMesh.rotation.z = elapsed * 0.06;
 
     renderer.render(scene, camera);
   }

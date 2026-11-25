@@ -411,6 +411,16 @@ const demoData = {
 };
 
 function openDemo(type) {
+  const liveUrls = {
+    'rag': 'https://threed-ai-pdf-chatbot.onrender.com/',
+    'recipe': 'https://rit-bite-recipe-app.vercel.app/',
+    'job': 'https://jobconnect-portal-m6nc.vercel.app/'
+  };
+  if (liveUrls[type]) {
+    window.open(liveUrls[type], '_blank');
+    return;
+  }
+
   const modal = document.getElementById('demoModal');
   const demoTitle = document.getElementById('demoTitle');
   const demoIcon = document.getElementById('demoIcon');

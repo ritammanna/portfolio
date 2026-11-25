@@ -183,7 +183,7 @@ async function handleGateRequest(e) {
   const submitBtn = document.getElementById('gateSubmitBtn');
 
   submitBtn.disabled = true;
-  submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Dispatching Request to ritamsuman89@gmail.com...`;
+  submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Dispatching Request to Ritam...`;
 
   const payload = {
     _subject: `🔒 PORTFOLIO ACCESS REQUEST: ${activeGateType.toUpperCase()} from ${name} (${company})`,
@@ -218,7 +218,7 @@ async function handleGateRequest(e) {
 
   document.getElementById('gateSuccessTitle').textContent = `Request Dispatched to Ritam!`;
   document.getElementById('gateSuccessMsg').innerHTML = `
-    Thank you, <strong>${name}</strong> (${company}). An access approval notification has been delivered directly to <strong>ritamsuman89@gmail.com</strong>.<br><br>
+    Thank you, <strong>${name}</strong> (${company}). An access approval notification has been delivered directly to Ritam.<br><br>
     Once reviewed, Ritam will approve your access at <strong>${email}</strong>. If Ritam has provided you with an instant approval passcode, enter it below to proceed right away.
   `;
 
@@ -261,7 +261,7 @@ async function handleContactSubmit(e) {
   const btn = document.getElementById('contactSubmitBtn');
 
   btn.disabled = true;
-  btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Sending message to ritamsuman89@gmail.com...`;
+  btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Sending message to Ritam...`;
 
   const payload = {
     _subject: `📩 PORTFOLIO MESSAGE: ${subject} from ${name}`,
@@ -281,10 +281,10 @@ async function handleContactSubmit(e) {
       },
       body: JSON.stringify(payload)
     });
-    alert(`Thank you, ${name}! Your inquiry has been sent directly to ritamsuman89@gmail.com. Ritam will get back to you shortly.`);
+    alert(`Thank you, ${name}! Your inquiry has been sent directly to Ritam. He will get back to you shortly.`);
     document.getElementById('contactForm').reset();
   } catch (err) {
-    alert(`Thank you, ${name}! Message dispatched directly to ritamsuman89@gmail.com.`);
+    alert(`Thank you, ${name}! Message dispatched directly to Ritam.`);
     document.getElementById('contactForm').reset();
   } finally {
     btn.disabled = false;

@@ -111,6 +111,24 @@
   ring2.rotation.y = Math.PI / 4;
   mainGroup.add(ring2);
 
+  // Responsive positioning for Mobile vs Desktop
+  function adjustForScreen() {
+    if (window.innerWidth < 768) {
+      icosaMesh.position.set(0, 5, -35);
+      coreMesh.position.set(0, 5, -35);
+      ring1.position.set(0, 5, -35);
+      ring2.position.set(0, 5, -35);
+      camera.position.z = 95;
+    } else {
+      icosaMesh.position.set(36, 8, -25);
+      coreMesh.position.set(36, 8, -25);
+      ring1.position.set(36, 8, -25);
+      ring2.position.set(36, 8, -25);
+      camera.position.z = 85;
+    }
+  }
+  adjustForScreen();
+
   // Mouse Interaction coordinates
   let mouseX = 0;
   let mouseY = 0;
@@ -122,17 +140,26 @@
     mouseY = (e.clientY - window.innerHeight / 2) * 0.04;
   });
 
+  // Touch Parallax for Mobile
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 0) {
+      mouseX = (e.touches[0].clientX - window.innerWidth / 2) * 0.02;
+      mouseY = (e.touches[0].clientY - window.innerHeight / 2) * 0.02;
+    }
+  }, { passive: true });
+
   // Scroll Parallax
   let scrollY = 0;
   window.addEventListener('scroll', () => {
     scrollY = window.scrollY;
-  });
+  }, { passive: true });
 
   // Resize handler
   window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    adjustForScreen();
   });
 
   // Animation Loop

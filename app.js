@@ -151,18 +151,18 @@ function openGateModal(type, targetUrl = '', title = '') {
   gateSuccess.style.display = 'none';
   document.getElementById('gatePasscodeError').style.display = 'none';
 
+  gateDesc.innerHTML = '';
+  gateDesc.style.display = 'none';
+
   if (type === 'cv') {
     gateTitle.textContent = 'Curriculum Vitae Access Request';
     gateIcon.className = 'fa-solid fa-file-shield text-blue';
-    gateDesc.innerHTML = `To protect personal contact information from web scrapers, please enter your professional details. A real-time verification request will be delivered to <strong>ritamsuman89@gmail.com</strong> for immediate approval.`;
   } else if (type === 'github') {
     gateTitle.textContent = `GitHub Repository Access (${title || 'Code Base'})`;
     gateIcon.className = 'fa-brands fa-github text-blue';
-    gateDesc.innerHTML = `To prevent unauthorized automated scraping of production code, access to <strong>${title || 'GitHub Repositories'}</strong> requires verification. A real-time request will be sent to <strong>ritamsuman89@gmail.com</strong>.`;
   } else {
     gateTitle.textContent = 'Direct Contact Request';
     gateIcon.className = 'fa-solid fa-lock text-blue';
-    gateDesc.innerHTML = `Please introduce yourself. An instant verification notification will be dispatched to <strong>ritamsuman89@gmail.com</strong>.`;
   }
 
   modal.classList.add('active');
@@ -198,7 +198,7 @@ async function handleGateRequest(e) {
   };
 
   try {
-    // Real-time email dispatch using FormSubmit API directed to user's verified email
+    // Real-time email dispatch using FormSubmit API directed to ritamsuman89@gmail.com
     await fetch('https://formsubmit.co/ajax/ritamsuman89@gmail.com', {
       method: 'POST',
       headers: {
@@ -226,19 +226,17 @@ async function handleGateRequest(e) {
   submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> Send Request to Ritam`;
 }
 
-// Master approval passcode verification (e.g. for user testing or authorized HR)
+// Master approval passcode verification (Passcodes: RM2026 or ALLOW)
 function verifyGatePasscode() {
   const code = document.getElementById('gatePasscodeInput').value.trim();
   const errBox = document.getElementById('gatePasscodeError');
 
-  // Master approval codes: 'RM2026' or 'RITAM2026' or 'ALLOW'
   if (code.toUpperCase() === 'RM2026' || code.toUpperCase() === 'RITAM2026' || code.toUpperCase() === 'ALLOW') {
     errBox.style.display = 'none';
     if (activeGateType === 'github') {
       window.open(activeTargetUrl || 'https://github.com/ritammanna', '_blank');
       closeGateModal();
     } else {
-      // Trigger instant verified PDF download
       const link = document.createElement('a');
       link.href = 'assets/Ritam_Manna_Resume.pdf';
       link.download = 'Ritam_Manna_Resume.pdf';

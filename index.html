@@ -50,10 +50,6 @@
   <section id="hero" class="section hero-section">
     <div class="container hero-grid">
       <div class="hero-content">
-        <div class="badge-pill">
-          <span class="status-indicator"></span>
-          <span>Available for MNC & High-Growth Roles • 2026 Batch</span>
-        </div>
         <h1 class="hero-title">
           Hi, I'm <span class="gradient-text">Ritam Manna</span>
         </h1>
@@ -87,10 +83,6 @@
             <span class="stat-label">Full-Stack & AI Systems</span>
           </div>
           <div class="stat-card">
-            <span class="stat-num">&lt;2ms</span>
-            <span class="stat-label">Vector Retrieval Latency</span>
-          </div>
-          <div class="stat-card">
             <span class="stat-num">100%</span>
             <span class="stat-label">Clean Code Commitment</span>
           </div>
@@ -112,7 +104,7 @@
             <i class="fa-solid fa-shield-halved"></i>
             <div>
               <div class="badge-title">AI & Full-Stack Developer</div>
-              <div class="badge-sub">MERN • FastAPI • Three.js</div>
+              <div class="badge-sub">MERN • Generative AI</div>
             </div>
           </div>
           <div class="floating-tech tech-1"><i class="fa-brands fa-react"></i> React</div>
@@ -123,15 +115,14 @@
     </div>
   </section>
 
-  <!-- About & Career Objective -->
+ <!-- About & Career Objective -->
   <section id="about" class="section">
     <div class="container">
       <div class="section-header">
         <span class="section-tag"><i class="fa-regular fa-compass"></i> Career Overview</span>
         <h2 class="section-title">Crafting Impactful <span class="gradient-text">Web & AI Experiences</span></h2>
-        <p class="section-desc">A Computer Science graduate focused on high-performance web development and practical AI solutions.</p>
+        <p class="section-desc">Full Stack Developer skilled in React, Node.js, Express.js, MongoDB, and Generative AI, focused on developing efficient and impactful digital solutions.</p>
       </div>
-
       <div class="about-grid">
         <div class="glass-card about-card">
           <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
@@ -140,7 +131,6 @@
             Aspiring Software & AI Engineer with foundational expertise in full-stack web development (MERN) and Generative AI (LLMs, RAG Pipelines). Experienced in designing responsive interfaces, implementing RESTful APIs, and managing workflows with Git and GitHub. Seeking an entry-level software engineer role to develop scalable, secure, and user-centric web applications.
           </p>
         </div>
-
         <div class="glass-card about-card">
           <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
           <h3>Core Strengths & Impact</h3>
@@ -154,7 +144,7 @@
       </div>
     </div>
   </section>
-
+           
   <!-- Technical Skills -->
   <section id="skills" class="section">
     <div class="container">
@@ -488,19 +478,18 @@
 
       <div class="contact-grid">
         <!-- Contact Cards -->
-        <div class="contact-info">
+               <div class="contact-info">
           
           <div class="glass-card contact-card">
             <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
             <div>
               <div class="card-label">Official Email</div>
               <div class="masked-info">
-                <span>ritamsuman89••••@gmail.com</span>
+                <span>ritam••••@gmail.com</span>
                 <button class="reveal-btn" onclick="openGateModal('contact', '', 'Email Connect')"><i class="fa-solid fa-paper-plane"></i> Contact</button>
               </div>
             </div>
           </div>
-
           <div class="glass-card contact-card">
             <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
             <div>
@@ -516,7 +505,7 @@
             <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
             <div>
               <div class="card-label">Location</div>
-              <div class="info-val">Purba Bardhaman, West Bengal – 713423 (Open to Relocation)</div>
+              <div class="info-val">Purba Bardhaman, West Bengal (Open to Relocation)</div>
             </div>
           </div>
 
@@ -524,7 +513,7 @@
             <div class="contact-icon"><i class="fa-solid fa-file-pdf"></i></div>
             <div>
               <div class="card-label">Curriculum Vitae</div>
-              <div class="info-val">Protected ATS-Friendly PDF (Verified Release)</div>
+              <div class="info-val">ATS-Friendly PDF</div>
               <button class="btn btn-primary btn-sm mt-2" onclick="openGateModal('cv', 'Bottom CV Card')">
                 <i class="fa-solid fa-download"></i> Request CV Download
               </button>
@@ -605,10 +594,7 @@
         <button class="modal-close" onclick="closeGateModal()"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <div class="modal-body">
-        <p class="modal-desc" id="gateDesc">
-          To protect personal contact information and private project assets against web scrapers, please enter your professional details. A real-time access verification request will be delivered to <strong>ritamsuman89@gmail.com</strong>.
-        </p>
-
+        <p class="modal-desc" id="gateDesc" style="display:none;"></p>
         <form id="gateForm" onsubmit="handleGateRequest(event)">
           <input type="hidden" id="gateType" value="">
           <input type="hidden" id="gateTargetUrl" value="">
